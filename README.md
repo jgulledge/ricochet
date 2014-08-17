@@ -32,7 +32,9 @@ Users of Ubuntu 14.04 or earlier and other slow distributions will need to use t
 Run `qmake` or `qmake-qt5`, then `make`. The default build portable, which will store configuration in a folder named `config` next to the binary. For a system installation using XDG configuration directories, run `qmake DEFINES+=RICOCHET_NO_PORTABLE` instead.
 
 #### OS X
-Use the [Qt SDK](https://qt-project.org/downloads) or homebrew. Run `qmake` and `make` to build an application bundle. The default build will store configuration in a `config.ricochet` folder next to the application *unless* the path looks like a system-wide Applications folder, in which case `~/Library/Application Support/Ricochet` is used.
+Use the [Qt SDK](https://qt-project.org/downloads) or homebrew. Run `qmake` then `make` to build an application bundle. The default build will store configuration in a `config.ricochet` folder next to the application *unless* the path looks like a system-wide Applications folder, in which case `~/Library/Application Support/Ricochet` is used.
+
+If adding tor to PATH does not work, either create a symlink or copy the tor executable to the `ricochet.app/Contents/MacOS` folder. Note: If you copy tor to this folder, you will need to keep it up to date when you update tor on your system. 
 
 #### Windows
 Builds with MinGW or MSVC. You will need the [Qt SDK](https://qt-project.org/downloads) and a copy of OpenSSL headers and libraries.
